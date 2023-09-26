@@ -801,7 +801,7 @@ namespace HacerRankProblemSolving
 
             var d = c[c.Count() - 1];
 
-            var e = (n - 1) - d;
+            var e = n - 1 - d;
 
             var f = Math.Max(max, c[0]);
 
