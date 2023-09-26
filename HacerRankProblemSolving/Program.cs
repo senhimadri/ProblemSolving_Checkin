@@ -58,5 +58,11 @@ var Arr = new List<int>() { 793810624, 895642170, 685903712, 623789054, 46859237
 
 //var AA = ProblemStatment.serviceLane(n: 8,width:new List<int>() { 2 ,3 ,1 ,2 ,3 ,2 ,3 ,3 },cases: new List<List<int>>() { new List<int>() { 0 ,3 }, new List<int>() { 4 ,6 }, new List<int>() { 6, 7 }, new List<int>() { 3, 5 }, new List<int>() { 0, 7 } }) ;
 
-var AA = ProblemStatment.workbook(n:3,k:5,arr:new List<int>() { 4, 2, 6, 1, 10 });
+//var AA = ProblemStatment.workbook(n:3,k:5,arr:new List<int>() { 4, 2, 6, 1, 10 });
+
+int[] aaa = { 0, 4 }; 
+
+var AA = ProblemStatment.flatlandSpaceStations2(n:5,c: aaa);
+
+
 

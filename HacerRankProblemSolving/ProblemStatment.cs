@@ -761,6 +761,56 @@ namespace HacerRankProblemSolving
             return res;
 
         }
+
+
+        public static int flatlandSpaceStations(int n, int[] c)
+        {
+            Dictionary<int, int> Map = new Dictionary<int, int>();
+
+            for (int i = 0; i < c.Count(); i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    var Value = Math.Abs(c[i] - j);
+
+                    if (!Map.ContainsKey(j) )
+                    {
+                        Map.Add(j, Value);
+                    }
+                    else if(Map[j] > Value)
+                    {
+                        Map[j] = Value;
+                    }
+                }
+            }
+            return Map.Values.Max();
+        }
+
+        public static int flatlandSpaceStations2(int n, int[] c)
+        {
+            int max = -1;
+            Array.Sort(c);
+            for (int i = 0; i < c.Count() - 1; i++)
+            {
+                var AA = c[i + 1];
+                var BB = c[i];
+                var CC = (AA - BB) / 2;
+
+                max = Math.Max(max, CC);
+            }
+
+            var d = c[c.Count() - 1];
+
+            var e = (n - 1) - d;
+
+            var f = Math.Max(max, c[0]);
+
+            var g = Math.Max(f, e);
+
+            var h = Math.Max(max, g);
+
+            return h;
+        }
     }
 
 }
