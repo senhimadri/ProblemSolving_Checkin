@@ -786,30 +786,52 @@ namespace HacerRankProblemSolving
             return Map.Values.Max();
         }
 
-        public static int flatlandSpaceStations2(int n, int[] c)
+        static int flatlandSpaceStations2(int n, int[] c)
         {
-            int max = -1;
             Array.Sort(c);
-            for (int i = 0; i < c.Count() - 1; i++)
-            {
-                var AA = c[i + 1];
-                var BB = c[i];
-                var CC = (AA - BB) / 2;
 
-                max = Math.Max(max, CC);
+            int Answer = 0;
+            int arrCount = c.Count();
+
+            for (int i = 1; i < arrCount; i++)
+            {
+                Answer = Math.Max(Answer, (c[i] - c[i - 1]));
+            }
+            Answer = Math.Max((Answer / 2), c[0]);
+
+            Answer = Math.Max(Answer, n - 1 - c[arrCount - 1]);
+
+            return Answer;
+
+        }
+
+
+        public static List<string> cavityMap(List<string> grid)
+        {
+            var count = grid.Count();
+
+            for (int x = 1; x < count - 1; x++)
+            {
+                for (int y = 1; y < count - 1; y++)
+                {
+                    var P = Convert.ToInt16(grid[x][y].ToString());
+
+                    var N = Convert.ToInt16(grid[x][y - 1].ToString());
+                    var S = Convert.ToInt16(grid[x][y + 1].ToString());
+                    var W = Convert.ToInt16(grid[x - 1][y].ToString());
+                    var E = Convert.ToInt16(grid[x + 1][y].ToString());
+
+                    if (P > N && P > S && P > W && P > E)
+                    {
+                        StringBuilder sb = new StringBuilder(grid[x]);
+                        sb[y] = 'X';
+                        grid[x] = sb.ToString();
+                    }
+                }
             }
 
-            var d = c[c.Count() - 1];
+            return grid;
 
-            var e = n - 1 - d;
-
-            var f = Math.Max(max, c[0]);
-
-            var g = Math.Max(f, e);
-
-            var h = Math.Max(max, g);
-
-            return h;
         }
     }
 

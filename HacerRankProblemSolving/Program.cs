@@ -60,9 +60,11 @@ var Arr = new List<int>() { 793810624, 895642170, 685903712, 623789054, 46859237
 
 //var AA = ProblemStatment.workbook(n:3,k:5,arr:new List<int>() { 4, 2, 6, 1, 10 });
 
-int[] aaa = { 28000 ,58701 ,43043 ,24909, 28572 }; 
+int[] aaa = { 28000 ,58701 ,43043 ,24909, 28572 };
 
-var AA = ProblemStatment.flatlandSpaceStations2(n:5,c: aaa);
+//var AA = ProblemStatment.flatlandSpaceStations2(n:5,c: aaa);
+
+var AA = ProblemStatment.cavityMap( new List<string>() { "1112", "1912", "1892", "1234" });
 
 Console.WriteLine(AA);
 
