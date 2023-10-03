@@ -812,26 +812,18 @@ namespace HacerRankProblemSolving
 
             for (int x = 1; x < count - 1; x++)
             {
+                StringBuilder sb = new StringBuilder(grid[x]);
                 for (int y = 1; y < count - 1; y++)
                 {
-                    var P = Convert.ToInt16(grid[x][y].ToString());
-
-                    var N = Convert.ToInt16(grid[x][y - 1].ToString());
-                    var S = Convert.ToInt16(grid[x][y + 1].ToString());
-                    var W = Convert.ToInt16(grid[x - 1][y].ToString());
-                    var E = Convert.ToInt16(grid[x + 1][y].ToString());
-
-                    if (P > N && P > S && P > W && P > E)
+                    if (grid[x][y] > grid[x][y - 1] && grid[x][y] > grid[x][y + 1] &&
+                        grid[x][y] > grid[x - 1][y] && grid[x][y] > grid[x + 1][y])
                     {
-                        StringBuilder sb = new StringBuilder(grid[x]);
                         sb[y] = 'X';
-                        grid[x] = sb.ToString();
                     }
                 }
+                grid[x] = sb.ToString();
             }
-
             return grid;
-
         }
     }
 
