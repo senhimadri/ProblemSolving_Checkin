@@ -64,7 +64,11 @@ int[] aaa = { 28000 ,58701 ,43043 ,24909, 28572 };
 
 //var AA = ProblemStatment.flatlandSpaceStations2(n:5,c: aaa);
 
-var AA = ProblemStatment.cavityMap( new List<string>() { "1112", "1912", "1892", "1234" });
+//var AA = ProblemStatment.cavityMap( new List<string>() { "1112", "1912", "1892", "1234" });
+
+var AA = ProblemStatment.stones(83,
+86,
+81);
 
 Console.WriteLine(AA);
 

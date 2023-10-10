@@ -825,6 +825,27 @@ namespace HacerRankProblemSolving
             }
             return grid;
         }
+
+        //5 3 23
+        public static List<int> stones(int n, int a, int b)
+        {
+            var res = new List<int>();
+
+            int incriser = 0;
+            int decriser = n - 1;
+
+            while (decriser >= 0)
+            {
+                res.Add(((decriser * a) + (incriser * b)));
+
+                decriser --;
+                incriser ++;
+            }
+
+            res= res.Distinct().ToList();
+            res.Sort();
+            return res;
+        }
     }
 
 }
