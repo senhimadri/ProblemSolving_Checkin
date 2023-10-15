@@ -66,9 +66,8 @@ int[] aaa = { 28000 ,58701 ,43043 ,24909, 28572 };
 
 //var AA = ProblemStatment.cavityMap( new List<string>() { "1112", "1912", "1892", "1234" });
 
-var AA = ProblemStatment.stones(83,
-86,
-81);
+
+var AA = ProblemStatment.strangeCounter(4);
 
 Console.WriteLine(AA);
 

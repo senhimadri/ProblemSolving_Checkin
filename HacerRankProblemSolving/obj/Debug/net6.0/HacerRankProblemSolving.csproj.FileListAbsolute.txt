@@ -12,3 +12,17 @@ C:\HimadriSen\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProb
 C:\HimadriSen\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.pdb
 C:\HimadriSen\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.genruntimeconfig.cache
 C:\HimadriSen\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\ref\HacerRankProblemSolving.dll
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\bin\Debug\net6.0\HacerRankProblemSolving.exe
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\bin\Debug\net6.0\HacerRankProblemSolving.deps.json
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\bin\Debug\net6.0\HacerRankProblemSolving.runtimeconfig.json
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\bin\Debug\net6.0\HacerRankProblemSolving.dll
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\bin\Debug\net6.0\HacerRankProblemSolving.pdb
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.GeneratedMSBuildEditorConfig.editorconfig
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.AssemblyInfoInputs.cache
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.AssemblyInfo.cs
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.csproj.CoreCompileInputs.cache
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.dll
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\refint\HacerRankProblemSolving.dll
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.pdb
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.genruntimeconfig.cache
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\ref\HacerRankProblemSolving.dll

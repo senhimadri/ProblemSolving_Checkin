@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Numerics;
+using System.Runtime.Intrinsics;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -845,6 +847,119 @@ namespace HacerRankProblemSolving
             res= res.Distinct().ToList();
             res.Sort();
             return res;
+        }
+
+        //public static string happyLadybugs(string b)
+        //{
+        //    Vector<int> occ= new Vector<int>();
+        //    int n = b.Length;
+        //    bool p=true, q=false;
+
+        //    for (int i = 0; i< n;i++) 
+        //    {
+        //        if ()
+        //        {
+
+        //        }
+
+
+        //        if (i==0 && b[i] == b[i+1] && p )
+        //        {
+        //            p = true;
+        //        }
+        //        else if (i== n-1 && b[n - 1] == b[n-2] && p)
+        //        {
+        //            p = true;
+        //        }
+        //        else if ((b[i] == b[i - 1] || b[i] == b[i + 1]) && p)
+        //        {
+        //            p = true;   
+        //        }
+        //        else
+        //        {
+        //            p = false;
+        //        }
+
+        //        if (b[i]=='_')
+        //            q = true;
+        //    }
+
+        //    if (p )
+        //        return "Yes";
+        //    else if (!p && !q)
+        //        return "No";
+
+        //    else if (!p && q)
+        //    {
+        //        var A = b.ToCharArray();
+        //        Array.Sort(A);
+        //        b = new  string(A);
+
+        //        for (int i = 1; i < n-1; i++)
+        //        {
+        //            if (b[i] == b[i+1] || b[i] == b[i-1] || b[i]=='_')
+        //            {
+        //                p = true;
+        //            }
+        //            else
+        //            {
+        //                p= false;
+        //                break;
+        //            }
+        //        }
+        //    }
+
+        //    if (p)
+        //    {
+        //        return "Yes";
+        //    }
+        //    else
+        //    {
+        //        return "No";
+        //    }
+        //}
+
+
+
+        public static string happyLadybugs2(string b)
+        {
+            Dictionary<char,int> occ = new Dictionary<char,int>();
+            for (int i = 0; i < b.Length; i++)
+            {
+                if (occ.ContainsKey(b[i]) && b[i]!='_')  occ[b[i]]++;
+                
+                else if (b[i] != '_')  occ.Add(b[i],1);
+            }
+
+            if (occ.Any(x => x.Value == 1)) return "No";
+            else if (b.Contains('_')) return "Yes";
+            else
+            {
+                for (int i = 1; i < b.Length-1; i++)
+                {
+                    if (b[i] != b[i + 1] && b[i] != b[i - 1]) return "No";
+                }
+                return "Yes";
+            }
+        }
+
+        //def strangeCounter(t):
+        //    n=4
+        //    while t>=n:
+        //        n=(n*2)+2
+        //    return n-t
+
+        public static long strangeCounter(long t)
+        {
+
+            long n = 4;
+
+            while (t >= n)
+            {
+                n = n * 2 + 2;
+            }
+
+            return n - t;
         }
     }
 
