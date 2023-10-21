@@ -961,6 +961,52 @@ namespace HacerRankProblemSolving
 
             return n - t;
         }
+
+        // s = "ab##", t = "c#d#"
+        public static bool BackspaceCompare(string s, string t)
+        {
+            for (int i = 1; i < s.Length; i++)
+            {
+                if (s[i] == '#')
+                {
+                    s=s.Remove((i - 1),1);
+                }
+            }
+
+            for (int i = 1; i < t.Length; i++)
+            {
+                if (t[i] == '#')
+                {
+                    t=t.Remove((i - 1),1);
+                }
+            }
+
+            return s == t;
+        }
+
+        //["flower","flow","flight"]
+        public static string LongestCommonPrefix(string[] strs)
+        {
+            Array.Sort(strs);
+            string FirstString = strs[0];
+            string LastString = strs[strs.Length - 1];
+
+            int Index = 0;
+
+            while (true)
+            { 
+                if (FirstString[0] == LastString[0])
+                {
+                    Index++;
+                }
+                else
+                {
+                    break;
+                }
+
+            }
+            return FirstString.Substring(0, Index);
+        }
     }
 
 }

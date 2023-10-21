@@ -67,7 +67,11 @@ int[] aaa = { 28000 ,58701 ,43043 ,24909, 28572 };
 //var AA = ProblemStatment.cavityMap( new List<string>() { "1112", "1912", "1892", "1234" });
 
 
-var AA = ProblemStatment.strangeCounter(4);
+//var AA = ProblemStatment.strangeCounter(4);
+
+//var AA = ProblemStatment.TwoSum(nums: new int[] { 11 ,2, 11, 7 , 15 },target: 9);
+
+var AA = ProblemStatment.LongestCommonPrefix(new string[] { "flower","flow","flight" });
 
 Console.WriteLine(AA);
 
