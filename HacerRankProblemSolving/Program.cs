@@ -71,9 +71,14 @@ int[] aaa = { 28000 ,58701 ,43043 ,24909, 28572 };
 
 //var AA = ProblemStatment.TwoSum(nums: new int[] { 11 ,2, 11, 7 , 15 },target: 9);
 
-var AA = ProblemStatment.LongestCommonPrefix(new string[] { "flower","flow","flight" });
+//var AA = ProblemStatment.IsPowerOfFour(17);
 
-Console.WriteLine(AA);
+int[] ASP = { 1,2,1,3,5,8,2,2,2,5,5,6,8  };
+
+//var aa = ProblemStatment.NumIdenticalPairs(ASP);
+
+var AAA = ProblemStatment.GroupThePeople(ASP);
+Console.WriteLine(AAA);
 
 
 

@@ -1029,6 +1029,65 @@ namespace HacerRankProblemSolving
             // so the string is valid, otherwise, there are unmatched opening brackets, so return false
             return stack.Count ==0 ;
         }
+
+        public static bool IsPowerOfFour(int n)
+        {
+
+            if (n == 1) return true;
+            while (n / 4 >= 1)
+            {
+                
+                if (n / 4 == 1 && n % 4 == 0) return true;
+                n = n / 4;
+            }
+            return false;
+        }
+
+        public static int NumIdenticalPairs(int[] nums)
+        {
+            int count = 0;
+            //Dictionary<int, int> ctn = new Dictionary<int, int>();
+
+            Hashtable ctn = new Hashtable();
+
+
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (ctn.ContainsKey(nums[i]))
+                {
+                    
+                    //count += ctn[nums[i]]++;
+                }
+                    
+                else
+                    ctn[nums[i]] = 1;
+            }
+            return count;
+        }
+
+        public static IList<IList<int>> GroupThePeople(int[] groupSizes)
+        {
+            Dictionary<int, List<int>> temp_group = new Dictionary<int, List<int>>();
+            IList<IList<int>> result = new List<IList<int>>();
+
+            for (int i = 0; i < groupSizes.Length; i++)
+            {
+                int size = groupSizes[i];
+                if (!temp_group.ContainsKey(size))
+                {
+                    temp_group[size] = new List<int>();
+                }
+                temp_group[size].Add(i);
+
+                if (temp_group[size].Count == size)
+                {
+                    result.Add(new List<int>(temp_group[size]));
+                    temp_group[size].Clear();
+                }
+            }
+            return result;
+        }
     }
 
 }
