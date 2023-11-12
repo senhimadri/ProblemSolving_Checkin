@@ -77,7 +77,7 @@ int[] ASP = { 1,2,1,3,5,8,2,2,2,5,5,6,8  };
 
 //var aa = ProblemStatment.NumIdenticalPairs(ASP);
 
-var AAA = ProblemStatment.GroupThePeople(ASP);
+var AAA = ProblemStatment.BackspaceCompareAlter(s: "a#c", t: "b");
 Console.WriteLine(AAA);
 
 

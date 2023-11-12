@@ -963,26 +963,6 @@ namespace HacerRankProblemSolving
         }
 
         // s = "ab##", t = "c#d#"
-        public static bool BackspaceCompare(string s, string t)
-        {
-            for (int i = 1; i < s.Length; i++)
-            {
-                if (s[i] == '#')
-                {
-                    s=s.Remove((i - 1),1);
-                }
-            }
-
-            for (int i = 1; i < t.Length; i++)
-            {
-                if (t[i] == '#')
-                {
-                    t=t.Remove((i - 1),1);
-                }
-            }
-
-            return s == t;
-        }
 
         //["flower","flow","flight"]
         public static string LongestCommonPrefix(string[] strs)
@@ -1087,6 +1067,109 @@ namespace HacerRankProblemSolving
                 }
             }
             return result;
+        }
+
+        //s: "a##c", t: "#a#c"
+        public static bool BackspaceCompare(string s, string t)
+        {
+
+            Stack<char> sStack = new Stack<char>();
+            Stack<char> tStack = new Stack<char>();
+
+            for (int i = 0; i < s.Length; i++)
+            {
+
+                if (sStack.Count!=0 && s[i] == '#')
+                {
+                    sStack.Pop();
+                }
+                else if (s[i]!='#')
+                {
+                    sStack.Push(s[i]);
+                }
+            }
+
+            for (int i = 0; i < t.Length; i++)
+            {
+                if (tStack.Count != 0 && t[i] == '#')
+                {
+                    tStack.Pop();
+                }
+                else if (t[i] != '#')
+                {
+                    tStack.Push(s[i]);
+                }
+            }
+
+            if (sStack.Count != tStack.Count)
+                return false;
+
+            while (sStack.Count != 0)
+            {
+                if (sStack.Peek() == tStack.Peek())
+                {
+                    sStack.Pop();
+                    tStack.Pop();
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public static bool BackspaceCompareAlter(string s, string t)
+        {
+            char[] s_char = new char[s.Length];
+            char[] t_char = new char[t.Length];
+
+            int k = 0, p = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '#')
+                {
+
+                    k--;
+                    k = (int)Math.Max(0, k);
+                }
+                else
+                {
+                    s_char[k] = s[i];
+                    k++;
+                }
+            }
+
+            for (int i = 0; i < t.Length; i++)
+            {
+                if (t[i] == '#')
+                {
+                    p--;
+                    p = (int)Math.Max(0, p);
+                }
+                else
+                {
+                    t_char[p] = t[i];
+                    p++;
+                }
+            }
+            if (k != p)
+            {
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < k; i++)
+                {
+                    if (s_char[i] != t_char[i])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
     }
 
