@@ -1171,6 +1171,41 @@ namespace HacerRankProblemSolving
                 return true;
             }
         }
+
+
+        public static string removeOuterParentheses(string s)
+        {
+            StringBuilder sb = new StringBuilder();
+            int opened = 0;
+            for (int i =0; i< s.Length;i++)
+            {
+                if (s[i] == '(' && opened++ > 0) sb.Append(s[i]);
+                if (s[i] == ')' && opened-- > 1) s.Append(s[i]);
+            }
+            return sb.ToString();
+        }
+        public static List<int> closestNumbers(List<int> arr)
+        {
+            arr.Sort();
+
+            Dictionary<int,List<int>> map = new();
+
+            for (int i = 1; i < arr.Count; i++)
+            {
+                if (map.ContainsKey(arr[i] - arr[i - 1]))
+                {
+                    map[arr[i] - arr[i - 1]].Add(arr[i - 1]);
+                    map[arr[i] - arr[i - 1]].Add(arr[i]);
+                }
+                else
+                {
+                    map.Add(arr[i] - arr[i - 1], new List<int>() { arr[i - 1], arr[i] });
+                }
+            }
+
+            return map[map.Keys.Min()];
+
+        }
     }
 
 }
