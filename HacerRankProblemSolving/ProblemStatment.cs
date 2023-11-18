@@ -1206,6 +1206,56 @@ namespace HacerRankProblemSolving
             return map[map.Keys.Min()];
 
         }
+
+
+        public static int MaxFrequency(int[] nums, int k)
+        {
+            Array.Sort(nums);
+            int res = 0;
+            int frequency;
+            for (long i = nums.Length - 1; i > 0; i--)
+            {
+                frequency = 1;
+                for (long j = (i - 1); j >= 0; j--)
+                {
+                    if (nums[i] <= nums[j] + k)
+                    {
+                        frequency++;
+                    }
+                }
+                if (frequency > res)
+                {
+                    res = frequency;
+                }
+            }
+            return res;
+        }
+
+
+        public static int MaxFrequencyV2(int[] nums, int k)
+        {
+            Array.Sort(nums);
+
+            int left = 0, answer = 0, current = 0;
+
+            for(int right =0; right< nums.Length; right++)
+            {
+                int target = nums[right];
+                current += target;
+
+
+                var vali = (right - left + 1) * target - current > k;
+
+                while ((right-left + 1)* target-current > k )
+                {
+                    current -= nums[left];
+                    left++;
+                }
+
+                answer = Math.Max(answer, right - left + 1);
+            }
+            return answer;
+        }
     }
 
 }
