@@ -1256,6 +1256,115 @@ namespace HacerRankProblemSolving
             }
             return answer;
         }
+
+
+        public static IList<bool> CheckArithmeticSubarrays(int[] nums, int[] l, int[] r)
+        {
+            IList<bool> res = new List<bool>();
+
+            for (int i = 0; i < l.Length; i++)
+            {
+                int[] sortedSubArray = sortedSubarray(nums, l[i], r[i]);
+
+                bool flag = true;
+                int diff = sortedSubArray[1] - sortedSubArray[0];
+
+                for (int j = 2; j < sortedSubArray.Length; j++)
+                {
+                    if (sortedSubArray[j] - sortedSubArray[j - 1] == diff)
+                    {
+                        flag = true;
+                    }
+                    else
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+
+                res.Add(flag);
+            }
+
+            return res;
+        }
+
+        private static int[] sortedSubarray(int[] nums, int startIndex, int endIndex)
+        {
+            int arrIndex = 0;
+            int[] array = new int[endIndex - startIndex + 1];
+
+            for (int i = startIndex; i <= endIndex; i++)
+            {
+                array[arrIndex] = nums[i];
+                arrIndex++;
+            }
+
+            Array.Sort(array);
+            return array;
+        }
+
+        public static IList<bool> checkArithmeticSubarrays(int[] nums, int[] l, int[] r)
+        {
+            IList<bool> res = new List<bool>();
+
+            for (int i = 0; i < l.Length; i++)
+            {
+                res.Add(isArithmeticSub(nums, l[i], r[i]));
+            }
+            return res;
+        }
+
+        private static bool isArithmeticSub(int[] nums, int l, int r)
+        {
+            if (r - l < 2) return true;
+
+            int max = int.MinValue, min = int.MaxValue;
+            List<int> set = new List<int>();
+
+            for (int i = l; i <= r; i++)
+            {
+                max = Math.Max(max, nums[i]);
+                min = Math.Max(min, nums[i]);
+
+                set.Add(nums[i]);
+            }
+            if ((max - min) % (r - l) != 0) return false;
+
+            int interval = (max - min) / (r - l);
+
+            for (int i = 1; i <= r - l; i++)
+            {
+                if (!set.Contains(min + i * interval)) return false;
+            }
+            return true;
+        }
+
+        private static bool isArithmeticSeq(int[] nums, int start, int end)
+        {
+            if (end - start < 2) return true;
+
+            int min = int.MaxValue, max = int.MinValue;
+
+            List<int> set = new List<int>();
+
+            for (int i = start; i <= end; i++)
+            {
+                min = Math.Min(min, nums[i]);
+                max = Math.Max(max, nums[i]);
+                set.Add(nums[i]);
+            }
+
+            if ((max - min) % (end - start) != 0) return false;
+            int interval = (max - min) / (end - start);
+
+            for (int i = 1; i <= end - start; i++)
+            {
+                var aaa = min + i * interval;
+                if (!set.Contains(min + i * interval)) return false;
+            }
+
+            return true;
+        }
     }
 
 }
