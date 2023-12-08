@@ -19,7 +19,7 @@ namespace HacerRankProblemSolving
 
             a.Sort();
             int len = 0, start = 0, num = 1;
-            for (int i = 1;i< a.Count();i++)
+            for (int i = 1; i < a.Count(); i++)
             {
                 int t = a[i] - a[start];
 
@@ -35,7 +35,7 @@ namespace HacerRankProblemSolving
                 }
             }
 
-            return Math.Max(len,num);
+            return Math.Max(len, num);
         }
 
         public static void miniMaxSum(List<int> arr)
@@ -64,7 +64,7 @@ namespace HacerRankProblemSolving
 
             int Counter = 0;
 
-            for (int i=0; i < candles.Count(); i++)
+            for (int i = 0; i < candles.Count(); i++)
             {
                 if (candles[i] == Max)
                 {
@@ -78,10 +78,10 @@ namespace HacerRankProblemSolving
 
         public static string timeConversion(string s)
         {
-            var H = Convert.ToInt16(s.Substring(0,2));
-            var M = s.Substring(3,2);
-            var S = s.Substring(6,2);
-            var ST = s.Substring(8,2);
+            var H = Convert.ToInt16(s.Substring(0, 2));
+            var M = s.Substring(3, 2);
+            var S = s.Substring(6, 2);
+            var ST = s.Substring(8, 2);
 
             string RH;
 
@@ -91,15 +91,15 @@ namespace HacerRankProblemSolving
             }
             else if ((H == 12 && ST == "PM") || (ST == "AM"))
             {
-                RH = H.ToString().PadLeft(2,'0');
+                RH = H.ToString().PadLeft(2, '0');
             }
 
-            else 
+            else
             {
-                RH = (H+12).ToString();
+                RH = (H + 12).ToString();
             }
 
-            return RH+":"+M+":"+S;
+            return RH + ":" + M + ":" + S;
         }
 
         public static void countApplesAndOranges(int s, int t, int a, int b, List<int> apples, List<int> oranges)
@@ -181,22 +181,22 @@ namespace HacerRankProblemSolving
             int i = n;
             int c = 0;
 
-            while (i > 0) 
+            while (i > 0)
             {
-                int s = i%10;
+                int s = i % 10;
 
-                if (s!=0 && n%s==0)
+                if (s != 0 && n % s == 0)
                 {
                     c++;
                 }
-                i = i/10;
+                i = i / 10;
             }
 
             return c;
         }
 
         //4, 6 ,5 ,3, 3 ,1 
-        public static int pickingNumbers(List<int> a,bool aaa)
+        public static int pickingNumbers(List<int> a, bool aaa)
         {
 
             a.Sort();
@@ -213,13 +213,13 @@ namespace HacerRankProblemSolving
 
                 int T = A - B;
 
-                if (T<=1)
+                if (T <= 1)
                 {
                     Ac++;
                 }
                 else
                 {
-                    if (Ac>Bc)
+                    if (Ac > Bc)
                     {
                         Bc = Ac;
                     }
@@ -227,10 +227,10 @@ namespace HacerRankProblemSolving
                     start = i;
                     Ac = 1;
                 }
-                
+
             }
 
-            return Math.Max(Ac,Bc);
+            return Math.Max(Ac, Bc);
         }
 
         public static int designerPdfViewer()
@@ -243,7 +243,7 @@ namespace HacerRankProblemSolving
 
             string Str = Alphabate[0].ToString();
 
-  
+
 
 
 
@@ -259,10 +259,10 @@ namespace HacerRankProblemSolving
 
             int Max = 0;
 
-    
 
 
-            for (int i=0; i < AlphaCount; i++)
+
+            for (int i = 0; i < AlphaCount; i++)
             {
                 int IndexofLetter = Alphabate.IndexOf(word[i]);
 
@@ -350,11 +350,11 @@ namespace HacerRankProblemSolving
 
         }
 
-        public static int FindIndexofList(this List<int> P,int Value)
+        public static int FindIndexofList(this List<int> P, int Value)
         {
-            int index=0;
+            int index = 0;
 
-            for (int i = 0;i < P.Count;i++) 
+            for (int i = 0; i < P.Count; i++)
             {
                 if (P[i] == Value)
                 {
@@ -362,7 +362,7 @@ namespace HacerRankProblemSolving
                     break;
                 }
             }
-            return index+1;
+            return index + 1;
         }
 
         //static int jumpingOnClouds(int[] c, int k)
@@ -384,11 +384,11 @@ namespace HacerRankProblemSolving
 
         public static string ReverseWords(string sentence)
         {
-            var Count = sentence.Length-1;
+            var Count = sentence.Length - 1;
             var A = sentence.ToCharArray();
             StringBuilder sb = new StringBuilder();
 
-            for (int i = Count; i>=0;i--)
+            for (int i = Count; i >= 0; i--)
             {
                 var aa = A[i].ToString();
                 sb.Append(aa);
@@ -422,7 +422,7 @@ namespace HacerRankProblemSolving
 
             while (Start != 0)
             {
-                Point = (c[Start] == 0) ?(Point - 1): (Point - 3);
+                Point = (c[Start] == 0) ? (Point - 1) : (Point - 3);
                 Start = (Start + k) % count;
             }
             return Point;
@@ -483,10 +483,10 @@ namespace HacerRankProblemSolving
             return CountA1 + CountB;
         }
 
-        public static string _substring(this string _string,long _start,long _length)
+        public static string _substring(this string _string, long _start, long _length)
         {
             //string _res=string.Empty;
-            
+
 
             //for (long i = _start; i < _length; i++)
             //{
@@ -512,8 +512,8 @@ namespace HacerRankProblemSolving
                 }
             }
             var arrc = arr.Count();
-            var aa=_hasNumber.Values.Max();
-            return arrc-aa;
+            var aa = _hasNumber.Values.Max();
+            return arrc - aa;
         }
 
 
@@ -526,7 +526,7 @@ namespace HacerRankProblemSolving
 
             for (int i = 0; i < topic.Count(); i++)
             {
-                for (int j = topic.Count()-1; j > i; j--)
+                for (int j = topic.Count() - 1; j > i; j--)
                 {
                     _var.Add(new List<string>()
                 {
@@ -543,7 +543,7 @@ namespace HacerRankProblemSolving
 
                 int _SkillCounter = 0;
 
-                for (int j=0 ; j < _stringAray_f.Count(); j++)
+                for (int j = 0; j < _stringAray_f.Count(); j++)
                 {
                     if (_stringAray_f[j] == '1' || _stringAray_s[j] == '1')
                     {
@@ -551,27 +551,27 @@ namespace HacerRankProblemSolving
                     }
                 }
 
-                if (_SkillCounter==_maxTopic)
+                if (_SkillCounter == _maxTopic)
                 {
                     _teamCounter++;
                 }
 
                 if (_SkillCounter > _maxTopic)
                 {
-                    _maxTopic= _SkillCounter;
+                    _maxTopic = _SkillCounter;
                     _teamCounter = 1;
 
                 }
             }
 
-            return new List<int> { _maxTopic,_teamCounter, };
+            return new List<int> { _maxTopic, _teamCounter, };
 
         }
 
 
         public static long taumBday(int b, int w, int bc, int wc, int z)
         {
-            List<long> Res= new List<long>();
+            List<long> Res = new List<long>();
             Res.Add(b * bc + w * wc);
 
 
@@ -597,7 +597,7 @@ namespace HacerRankProblemSolving
                     Coun++;
                 }
             }
-            if (Coun==0)
+            if (Coun == 0)
             {
                 Console.WriteLine("INVALID RANGE");
             }
@@ -615,7 +615,7 @@ namespace HacerRankProblemSolving
 
             var S_SplitDigit = SquareNumber % ASP;
 
-            var F_splitDigit = (SquareNumber - S_SplitDigit)/ ASP;
+            var F_splitDigit = (SquareNumber - S_SplitDigit) / ASP;
 
             var ActualCondition = F_splitDigit + S_SplitDigit == number;
 
@@ -705,7 +705,7 @@ namespace HacerRankProblemSolving
         {
             int Counter = 0;
 
-            while (p > m && s>p && s >= 0)
+            while (p > m && s > p && s >= 0)
             {
                 s = s - p;
                 p = p - d;
@@ -747,13 +747,13 @@ namespace HacerRankProblemSolving
         {
             int page = 1, chapter = 1, first_exercise = 1, res = 0;
 
-            while(chapter<= n)
+            while (chapter <= n)
             {
                 int last_exercise = Math.Min(first_exercise + k - 1, arr[chapter - 1]);
                 if (first_exercise <= page && page <= last_exercise) res++;
                 first_exercise = last_exercise + 1;
 
-                if (first_exercise> arr[chapter-1])
+                if (first_exercise > arr[chapter - 1])
                 {
                     chapter++;
                     first_exercise = 1;
@@ -775,11 +775,11 @@ namespace HacerRankProblemSolving
                 {
                     var Value = Math.Abs(c[i] - j);
 
-                    if (!Map.ContainsKey(j) )
+                    if (!Map.ContainsKey(j))
                     {
                         Map.Add(j, Value);
                     }
-                    else if(Map[j] > Value)
+                    else if (Map[j] > Value)
                     {
                         Map[j] = Value;
                     }
@@ -840,11 +840,11 @@ namespace HacerRankProblemSolving
             {
                 res.Add(((decriser * a) + (incriser * b)));
 
-                decriser --;
-                incriser ++;
+                decriser--;
+                incriser++;
             }
 
-            res= res.Distinct().ToList();
+            res = res.Distinct().ToList();
             res.Sort();
             return res;
         }
@@ -923,19 +923,19 @@ namespace HacerRankProblemSolving
 
         public static string happyLadybugs2(string b)
         {
-            Dictionary<char,int> occ = new Dictionary<char,int>();
+            Dictionary<char, int> occ = new Dictionary<char, int>();
             for (int i = 0; i < b.Length; i++)
             {
-                if (occ.ContainsKey(b[i]) && b[i]!='_')  occ[b[i]]++;
-                
-                else if (b[i] != '_')  occ.Add(b[i],1);
+                if (occ.ContainsKey(b[i]) && b[i] != '_') occ[b[i]]++;
+
+                else if (b[i] != '_') occ.Add(b[i], 1);
             }
 
             if (occ.Any(x => x.Value == 1)) return "No";
             else if (b.Contains('_')) return "Yes";
             else
             {
-                for (int i = 1; i < b.Length-1; i++)
+                for (int i = 1; i < b.Length - 1; i++)
                 {
                     if (b[i] != b[i + 1] && b[i] != b[i - 1]) return "No";
                 }
@@ -974,7 +974,7 @@ namespace HacerRankProblemSolving
             int Index = 0;
 
             while (true)
-            { 
+            {
                 if (FirstString[0] == LastString[0])
                 {
                     Index++;
@@ -988,10 +988,10 @@ namespace HacerRankProblemSolving
             return FirstString.Substring(0, Index);
         }
 
-        public static bool isValid(string  s)
+        public static bool isValid(string s)
         {
             Stack<char> stack = new Stack<char>(); // create an empty stack
-            for (int i = 0; i < s.Length; i ++)
+            for (int i = 0; i < s.Length; i++)
             { // loop through each character in the string
                 if (s[i] == '(') // if the character is an opening parenthesis
                     stack.Push(')'); // push the corresponding closing parenthesis onto the stack
@@ -1001,13 +1001,13 @@ namespace HacerRankProblemSolving
                     stack.Push(']'); // push the corresponding closing bracket onto the stack
 
                 else if (stack.Count == 0 || stack.Pop() != s[i]) // if the character is a closing bracket
-                                                              // if the stack is empty (i.e., there is no matching opening bracket) or the top of the stack
-                                                              // does not match the closing bracket, the string is not valid, so return false
+                                                                  // if the stack is empty (i.e., there is no matching opening bracket) or the top of the stack
+                                                                  // does not match the closing bracket, the string is not valid, so return false
                     return false;
             }
             // if the stack is empty, all opening brackets have been matched with their corresponding closing brackets,
             // so the string is valid, otherwise, there are unmatched opening brackets, so return false
-            return stack.Count ==0 ;
+            return stack.Count == 0;
         }
 
         public static bool IsPowerOfFour(int n)
@@ -1016,7 +1016,7 @@ namespace HacerRankProblemSolving
             if (n == 1) return true;
             while (n / 4 >= 1)
             {
-                
+
                 if (n / 4 == 1 && n % 4 == 0) return true;
                 n = n / 4;
             }
@@ -1036,10 +1036,10 @@ namespace HacerRankProblemSolving
             {
                 if (ctn.ContainsKey(nums[i]))
                 {
-                    
+
                     //count += ctn[nums[i]]++;
                 }
-                    
+
                 else
                     ctn[nums[i]] = 1;
             }
@@ -1079,11 +1079,11 @@ namespace HacerRankProblemSolving
             for (int i = 0; i < s.Length; i++)
             {
 
-                if (sStack.Count!=0 && s[i] == '#')
+                if (sStack.Count != 0 && s[i] == '#')
                 {
                     sStack.Pop();
                 }
-                else if (s[i]!='#')
+                else if (s[i] != '#')
                 {
                     sStack.Push(s[i]);
                 }
@@ -1177,7 +1177,7 @@ namespace HacerRankProblemSolving
         {
             StringBuilder sb = new StringBuilder();
             int opened = 0;
-            for (int i =0; i< s.Length;i++)
+            for (int i = 0; i < s.Length; i++)
             {
                 if (s[i] == '(' && opened++ > 0) sb.Append(s[i]);
                 if (s[i] == ')' && opened-- > 1) s.Append(s[i]);
@@ -1188,7 +1188,7 @@ namespace HacerRankProblemSolving
         {
             arr.Sort();
 
-            Dictionary<int,List<int>> map = new();
+            Dictionary<int, List<int>> map = new();
 
             for (int i = 1; i < arr.Count; i++)
             {
@@ -1238,7 +1238,7 @@ namespace HacerRankProblemSolving
 
             int left = 0, answer = 0, current = 0;
 
-            for(int right =0; right< nums.Length; right++)
+            for (int right = 0; right < nums.Length; right++)
             {
                 int target = nums[right];
                 current += target;
@@ -1246,7 +1246,7 @@ namespace HacerRankProblemSolving
 
                 var vali = (right - left + 1) * target - current > k;
 
-                while ((right-left + 1)* target-current > k )
+                while ((right - left + 1) * target - current > k)
                 {
                     current -= nums[left];
                     left++;
@@ -1385,7 +1385,9 @@ namespace HacerRankProblemSolving
 
             Stack<TreeNode> stack = new Stack<TreeNode>();
             TreeNode left, right;
-            if (root.left != null)
+
+
+            if (root.left != null && root.right != null)
             {
                 if (root.right == null) return false;
                 stack.Push(root.left);
@@ -1396,7 +1398,7 @@ namespace HacerRankProblemSolving
                 return false;
             }
 
-            while ( stack.Count() !=0)
+            while (stack.Count() != 0)
             {
                 if (stack.Count() % 2 != 0) return false;
                 right = stack.Pop();
@@ -1428,6 +1430,161 @@ namespace HacerRankProblemSolving
             }
 
             return true;
+        }
+
+        public static bool isSymmetricrfd(TreeNode root)
+        {
+            if (root == null) return true;
+
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            TreeNode left, right;
+
+            if (root.left is null && root.right is null) return true;
+            if (root.left is null || root.right is null) return false;
+
+
+            stack.Push(root.left);
+            stack.Push(root.right);
+
+            while (stack.Count() != 0)
+            {
+                if (stack.Count() % 2 != 0) return false;
+                right = stack.Pop();
+                left = stack.Pop();
+
+                if (right.val != left.val) return false;
+
+
+
+                if (left.left is not null)
+                {
+                    if (right.right == null) return false;
+                    stack.Push(left.left);
+                    stack.Push(right.right);
+                }
+                else if (right.right != null)
+                {
+                    return false;
+                }
+
+                if (left.right != null)
+                {
+                    if (right.left == null) return false;
+                    stack.Push(left.right);
+                    stack.Push(right.left);
+                }
+                else if (right.left != null)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        public static int CountCharacters(string[] words, string chars)
+        {
+            int res = 0;
+            int[] seen = new int[26];
+
+            for (int i = 0; i < chars.Length; i++)
+            {
+                seen[chars[i] - 'a']++;
+            }
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                int[] tseen = new int[26];
+
+                Array.Copy(seen,tseen,26);
+
+                string word = words[i];
+                int tCount = 0;
+
+                for (int j = 0; j < word.Length; j++)
+                {
+
+                    char aaaaaa = word[j];
+                    var aaaaaaaa = word[j] - 'a';
+                    var sssg = tseen[word[j] - 'a'];
+                    if (tseen[word[j] - 'a'] > 0)
+                    {
+                        tCount++;
+                        tseen[word[j] - 'a']--;
+                    }
+                }
+                if (tCount == word.Length)
+                {
+                    res += tCount;
+                }
+            }
+            return res;
+        }
+
+
+        public static  string LargestGoodInteger(string num)
+        {
+
+            int maxval = -1;
+            for (int i = 0; i <= num.Length - 3; i++)
+            {
+
+                var a = num[i];
+                var b = num[i + 1];
+                var c = num[i + 2];
+                if (num[i] == num[i + 1] && num[i] == num[i + 2])
+                    maxval = Math.Max(maxval, int.Parse(num[i].ToString()));
+            }
+            return maxval == -1 ? string.Empty : maxval == 0 ? "000" : (maxval * 111).ToString();
+
+        }
+
+        public static int NumberOfMatches(int n)
+        {
+
+            int rest = 0;
+            int count = 0;
+
+            while (n > 1)
+            {
+                count += (n + rest) / 2;
+                rest = n % 2;
+                n = (n + rest) / 2;
+
+            }
+            return count;
+        }
+
+        public static int GoodNodes(TreeNode root)
+        {
+            Stack<(TreeNode, int)> stack = new Stack<(TreeNode, int)>();
+            stack.Push((root, int.MinValue));
+            int count = 0;
+
+            while (stack.Count > 0)
+            {
+                var (node, maxNum) = stack.Pop();
+
+                if (node.val >= maxNum)
+                {
+                    count++;
+                }
+
+                maxNum = Math.Max(maxNum, node.val);
+
+                if (node.left != null)
+                {
+                    stack.Push((node.left, maxNum));
+                }
+
+                if (node.right != null)
+                {
+                    stack.Push((node.right, maxNum));
+                }
+            }
+
+            return count;
         }
 
 

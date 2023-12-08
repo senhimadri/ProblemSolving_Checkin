@@ -79,7 +79,10 @@ int[] ASP = { 1,2,1,3,5,8,2,2,2,5,5,6,8  };
 
 //var AAA = ProblemStatment.BackspaceCompareAlter(s: "a#c", t: "b");
 
-var aa = ProblemStatment.checkArithmeticSubarrays(nums: new int[] { 4, 6, 5, 9, 3, 7 }, l: new int[] { 0, 0, 2 } , r: new int[] { 2, 3, 5 } );
+//var aa = ProblemStatment.checkArithmeticSubarrays(nums: new int[] { 4, 6, 5, 9, 3, 7 }, l: new int[] { 0, 0, 2 } , r: new int[] { 2, 3, 5 } );
+
+var aa = ProblemStatment.NumberOfMatches(14);
+
 Console.WriteLine(aa);
 
 
