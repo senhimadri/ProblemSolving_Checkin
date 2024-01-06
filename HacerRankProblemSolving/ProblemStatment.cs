@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using System.Runtime.Intrinsics;
+using System.Security;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -1497,7 +1499,7 @@ namespace HacerRankProblemSolving
             {
                 int[] tseen = new int[26];
 
-                Array.Copy(seen,tseen,26);
+                Array.Copy(seen, tseen, 26);
 
                 string word = words[i];
                 int tCount = 0;
@@ -1523,7 +1525,7 @@ namespace HacerRankProblemSolving
         }
 
 
-        public static  string LargestGoodInteger(string num)
+        public static string LargestGoodInteger(string num)
         {
 
             int maxval = -1;
@@ -1588,6 +1590,183 @@ namespace HacerRankProblemSolving
         }
 
 
+        public static int LengthOfLongestSubstring(string s)
+        {
+            int result = 0;
+            int length = s.Count();
+
+            for (int i = 0; i < length - 1; i++)
+            {
+                int counter = 1;
+                for (int j = i + 1; j < length; j++)
+                {
+                    if (s[i] == s[j]) break;
+                    counter++;
+                }
+                result = Math.Max(counter, result);
+            }
+            return result;
+        }
+
+
+        public static int LengthOfLongestSubstring2d(string s)
+        {
+            int l = 0;
+            int length = 0;
+            Dictionary<char, int> map = new Dictionary<char, int>();
+            for (int i = 0; i < s.Count(); i++)
+            {
+                char c = s[i];
+                if (map.ContainsKey(c) && map[c] >= l)
+                {
+                    l = map[c] + 1;
+                    map[c] = i;
+                }
+                else
+                {
+                    length = Math.Max(length, i - l + 1);
+                    map.Add(c, i);
+                }
+            }
+            return length;
+        }
+
+        public static string LongestPalindrome(string s)
+        {
+            Dictionary<int, string> result = new();
+            int i = 1, r = 0;
+            int length = s.Count();
+
+            while (i < length)
+            {
+                if (r >= 0 && s[i] == s[r])
+                {
+                    result.Add(i - r + 1, s.Substring(r, (i - r + 1)));
+                    r = r - 1;
+                }
+                else if (r >= 0 && s[i] == s[r - 1])
+                {
+                    result.Add(i - r + 2, s.Substring(r - 1, (i - r + 2)));
+                    i++;
+                    r = r - 2;
+                }
+                else
+                {
+                    i++;
+                    r = i - 1;
+                }
+            }
+
+            return string.Empty;
+        }
+
+
+
+        public static int[] CountBits(int n)
+        {
+            int[] result = new int[n + 1];
+
+            for (int i = 1; i < n + 1; i++)
+            {
+                var aaaa = 1 / 2;
+                var aaa = result[i / 2];
+                var bbb = i % 2;
+
+                result[i] = result[i >> 1] + i % 2;
+            }
+            return result;
+        }
+
+        public static int NumDecodings(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return 0;
+
+            Dictionary<string, int> dp = new Dictionary<string, int>();
+
+            int dfs(string str)
+            {
+                if (!dp.ContainsKey(str))
+                {
+                    if (str.Length > 0 && str[0] == '0')
+                        dp[str] = 0;
+
+                    else if (string.IsNullOrEmpty(str) || str.Length == 1)
+                        dp[str] = 1;
+
+                    else if (int.Parse(str.Substring(0, 2)) <= 26)
+                    {
+                        int first = dfs(str.Substring(1));
+                        int second = dfs(str.Substring(2));
+
+                        dp[str] = first + second;
+                    }
+                    else
+                        dp[str] = dfs(str.Substring(1));
+
+                }
+
+
+                return dp[str];
+            }
+
+
+            return dfs(s);
+        }
+
+
+
+        public static int NumDecodings2(string s)
+        {
+            Dictionary<int, int> dp = new Dictionary<int, int>()
+            {
+                { s.Length,1}
+            };
+
+            int dfs(int i  )
+            {
+                if (dp.ContainsKey(i))
+                    return dp[i];
+                if (s[i] == '0')
+                    return 0;
+
+                int res = dfs(i+1);
+
+                if(i + 1 < s.Length && (s[i]=='1' || (s[i]=='2' && s[i+1]<=6)))
+                    res += dfs(i + 2);
+
+                dp[i] = res;
+
+                return res;
+            }
+            return dfs(0);
+        }
+
+        public static double MyPow(double x, int n)
+        {
+
+            double result = 1;
+
+            if (n == 0) result = 1;
+
+            else if (n < 0)
+            {
+                for (long i = -1; i >= n; i--)
+                {
+                    result *= x;
+                }
+                result = 1 / result;
+            }
+            else
+            {
+                for (long i = -1; i >= n; i--)
+                {
+                    result *= x;
+                }
+            }
+
+            return result;
+        }
     }
 
 }

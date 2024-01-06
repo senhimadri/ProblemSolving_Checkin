@@ -26,3 +26,4 @@ D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\
 D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.pdb
 D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.genruntimeconfig.cache
 D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\ref\HacerRankProblemSolving.dll
+D:\OWN Practice\Problem Solving\HacerRankProblemSolving\HacerRankProblemSolving\obj\Debug\net6.0\HacerRankProblemSolving.sourcelink.json

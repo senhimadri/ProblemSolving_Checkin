@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qr3ZvFnsDf2Hq4JLMKvcjzdpaeLKqMb2wSYE4IPNtPMcO3WgLC6CyK/On1C0zsVSvAum/f+6DAeayMKJXFTd8w==",
+  "dgSpecHash": "XdvCOfvEh4JVHJBlqFXDYDOSSK8THQM0BECyWxL62qpMapjfUUU1j0M/zaWh3pgW1oneaQnk6ItxyglQ72qNKQ==",
   "success": true,
   "projectFilePath": "D:\\OWN Practice\\Problem Solving\\HacerRankProblemSolving\\HacerRankProblemSolving\\HacerRankProblemSolving.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
   "logs": []
 }
