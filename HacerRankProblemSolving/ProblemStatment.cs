@@ -1767,6 +1767,30 @@ namespace HacerRankProblemSolving
 
             return result;
         }
+
+
+        public static int FindMiddleIndex(int[] nums)
+        {
+            int sum = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                sum += nums[i];
+            }
+
+            int prefix = 0, suffix = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                suffix = sum - prefix + nums[i]  ;
+
+                if (suffix == prefix)
+                {
+                    return i;
+                }
+
+                prefix += nums[i];
+            }
+            return -1;
+        }
     }
 
 }
