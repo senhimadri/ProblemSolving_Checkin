@@ -1723,16 +1723,16 @@ namespace HacerRankProblemSolving
                 { s.Length,1}
             };
 
-            int dfs(int i  )
+            int dfs(int i)
             {
                 if (dp.ContainsKey(i))
                     return dp[i];
                 if (s[i] == '0')
                     return 0;
 
-                int res = dfs(i+1);
+                int res = dfs(i + 1);
 
-                if(i + 1 < s.Length && (s[i]=='1' || (s[i]=='2' && s[i+1]<=6)))
+                if (i + 1 < s.Length && (s[i] == '1' || (s[i] == '2' && s[i + 1] <= 6)))
                     res += dfs(i + 2);
 
                 dp[i] = res;
@@ -1780,7 +1780,7 @@ namespace HacerRankProblemSolving
             int prefix = 0, suffix = 0;
             for (int i = 0; i < nums.Length; i++)
             {
-                suffix = sum - prefix + nums[i]  ;
+                suffix = sum - prefix + nums[i];
 
                 if (suffix == prefix)
                 {
@@ -1791,6 +1791,60 @@ namespace HacerRankProblemSolving
             }
             return -1;
         }
-    }
 
+        public static IList<IList<int>> Generate(int numRows)
+        {
+
+            IList<IList<int>> result = new List<IList<int>>();
+            result.Add(new List<int>() { 1 });
+
+            for (int i = 1; i < numRows - 1; i++)
+            {
+                List<int> temp = new List<int>();
+
+                temp.Add(0);
+                temp.AddRange(result[i - 1]);
+                temp.Add(0);
+
+                IList<int> res = new List<int>();
+
+                for (int j = 0; j < i + 1; j++)
+                {
+                    res.Add(temp[j] + temp[j + 1]);
+                }
+
+                result.Add(res);
+            }
+
+            return result;
+        }
+
+        public static int[][] Merge(int[][] intervals)
+        {
+
+            Array.Sort(intervals, (x, y) => x[0] - y[0]);
+
+            int i = 0, j = 0;
+
+            while(j< intervals.Length)
+            {
+                var first = intervals[i];
+                var second = intervals[j];
+
+                if (first[1]>= second[0])
+                {
+                    first[1] = Math.Max(first[1], second[1]);
+                }
+                else
+                {
+                    intervals[i + 1] = intervals[j];
+                    i++;
+                }
+
+                j++;
+            }
+
+            return intervals.Take(i+1).ToArray();
+        }
+     }
 }
