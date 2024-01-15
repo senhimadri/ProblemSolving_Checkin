@@ -1824,7 +1824,7 @@ namespace HacerRankProblemSolving
 
             Array.Sort(intervals, (x, y) => x[0] - y[0]);
 
-            int i = 0, j = 0;
+            int i = 0, j = 1;
 
             while(j< intervals.Length)
             {

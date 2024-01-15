@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HacerRankProblemSolving")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcdff5b112aa760f6d97c106bafb84554d4a3223")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5e286d764c8bb10c30d9b3c09dc3463ae0b80d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("HacerRankProblemSolving")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HacerRankProblemSolving")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
